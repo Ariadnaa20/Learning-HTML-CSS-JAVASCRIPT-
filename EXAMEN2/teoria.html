@@ -1,0 +1,171 @@
+<!DOCTYPE html> <!--serveix per dirli al navegador que estem treballant amb html 5-->
+<html lang = "es"> <!-- serveix per dir en quin idima estarà la pag-->
+
+<head>
+
+    <!--PEL SEO-->
+    <meta charset = "UTF-8"/> <!--codificació de caracters-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--controlar el compartament de la pag en disp.móvils. Asegura que l'amplada de la pag sigui igual q la pantalla amb un 100%-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--serveix per la compatibilitat amb el navegador i versions d'aquest-->
+    <title>Nom </title><!--nom del document-->
+    <meta name="description" content="Los meta tags de HTML codifican información para ser interpretada por el navegador y los buscadores. ¿Sabes cuáles son imprescindibles?"/>
+    <meta name="keywords" content="palabra clave 1, palabra clave 2, palabra clave 3"/>
+    <meta name="author" content="Nombre del autor" />
+    <meta name="copyright" content="Propietario del copyright" />
+
+
+    <!--PELS ROBOTS DE BÚSQUEDA-->
+
+    <!--Les seguents normalment es combinen, exemple: nofollow, noindex-->
+    <meta name="robots" content="index"/> <!--per indexar la pagina-->
+    <meta name="robots" content="noindex"/> <!--per no indexar la pagina-->
+    <meta name="robots" content="follow"/> <!--que reccorri els enllaços de la pagina-->
+    <meta name="robots" content="nofollow"/><!--no reccorre els enllaços interns de la pagina-->
+
+    <meta http-equiv="cache-control" content="no-cache"/> <!--per a que no es guardi a la caché-->
+    <meta http-equiv="expires" content="43200"/> <!--que es guardi pero durant 43200seg. o tambe li pots posar data "Sat, 07 Feb 2016 00:00:00 GMT"-->
+    <meta http-equiv="refresh" content="43200; url=http://www.ionos.es/"/> <!--quan passin 10 segons que es renvii a la pag prinipal -->
+
+
+</head>
+
+<body>
+    <h1>Encabezado 1</h1> <!--son encabezados i hi han fins el 6-->
+    <p>Un paragraf i en <strong> negrita</strong></p>
+
+    <!--Enllaços-->
+    <a href="https:.."> Enllaç a una altra pag web</a>
+    <a href="#seccion2">Anar a una secció de la pagina</a>
+    <a href="/archivos/documento.pdf">Enllaç a un altra pagina de la web </a>
+
+
+    <!--Imatges-->
+    <img src="https://www.ejemplo.com/imagen.jpg" alt="Imatge a una url externa">
+    <img src="carpeta/imagen-local.png" alt="Imatge desde una ruta local (resources)">
+    <img src="imagen.jpg" alt="Imatge amb un alt i amplada específics">
+    
+
+
+    <!--Audios--> 
+
+    <audio controls>
+        <source src="ruta-del-audio.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+
+
+    <!--Videos--> 
+    <video controls>
+        <source src="ruta-del-video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!--Llistes-->
+
+    <ol>
+        <li>element 1</li>
+        <li>element 2</li>
+    </ol>
+
+    <ul>
+        <li>element 1</li>
+        <li>element 2</li>
+    </ul>
+
+    <!--Taules-->
+
+    <table>
+        <thead>
+            <tr> <!--fila1-->
+                <th>Elemento1</th>
+                <th>Elemento2</th>
+                <th>Elemento3</th>
+            </tr>
+
+        </thead>
+    
+
+        <tbody>
+            <tr> <!--fila2-->
+                <td>Element 1.1</td>
+                <td>Element 1.2</td>
+            </tr>
+            <tr> <!--fila3-->
+                <td>Element 1.1</td>
+                <td>Element 1.2</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <div>
+        <p>text normal</p>
+        <p>Esto es un <span class="">texto destacado per a una classe</span> en la misma línea.</p>
+    </div>
+
+    <!--TAGS-->
+    <header> 
+        <p>Aixo es la cabezera o encabezado.Normalent dins d'aquest esta el logo la barra de navegacio</p>
+
+        <nav>
+            <p>Aixo seria la barra de navegacio per anar a diferents pagines amb els links pots posar una llista dels links</p>
+            <ol>
+                <li>vefvfv</li>
+            </ol>
+    
+        </nav>
+    </header>
+
+    
+    <main>
+        <p>El contingut mes important de tota la pagina</p>
+
+        <div> <!-- elemento de bloque ocupa todo el ancho disponible i una linea nueva-->
+            <section>  <!-- Sección dentro del contenido principal -->
+                <h2>Bienvenidos a Nuestra Página</h2>
+                <p>Esta es una sección de bienvenida.</p>
+            </section>
+        </div>
+
+
+        <article>  <!-- Artículos o entradas de contenido, el contingut te sentit fora de la pagina web original i -->
+            <h2>Noticias Recientes</h2>
+            <p>Aquí van las noticias más recientes relacionadas con nuestro tema.</p>
+        </article>
+
+        <aside> <!-- Contenido secundario o complementario -->
+            <h2>Información Adicional</h2>
+            <p>Detalles adicionales, links útiles, o información secundaria.</p>
+        </aside>
+
+    
+    </main>
+
+    <footer>
+            <p>El peu de pàgina. </p>
+    </footer>
+
+
+    <!--ID, CLASSES, TAGS
+        ID= te especialitat no es pot repetir nomes hi ha un id amb un nom i es selecciona al css amb #header{}
+        CLASSE= Pot englobar molts elements .header-ejemplo{}
+        TAG= directament no posem clase es a dir p{}
+    -->
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

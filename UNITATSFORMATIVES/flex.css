@@ -1,0 +1,55 @@
+
+.container{
+
+    box-sizing: border-box;
+    display:flex; /*convertir el conetndior en flex. Tambe hi ha el display:flex-inline. es per a que sigui flex pero comportament en linea */
+    height: 30vh;
+    margin: 10px;
+    background-color: blueviolet;
+
+    flex-direction: row; /*4 VALORS: 1 ROW fila(per defecte), 2ROW-REVERSE fila-invertida, 3COLUMN columna, 4COLUMN-REVERSE columna-invertida*/
+
+    flex-wrap: nowrap; /*Com estaran alineats si en una fila o mes depen del viewport. 
+    VALORS: 1 NOWRAP alinear els items en UNA linea no s'adaparan al viewport (per defecte), 2WRAP es com q els paquets se envuleven i poden
+    totes les propietats es combien per exemple fem servir el height per a flex-direction:column i el width per el row
+     */
+
+     justify-content: flex-start; /*Distribucio del elements en el eix definit en flex-direction: felx-start, flex-end, space-around, center,  space-between
+     treballa amb totes les files a la vegada*/
+
+     
+     /*Estamos en el eje de las x definifo en el flex-direction pero si queremos tambien controlar como se van a comportar en el eje y. Les dos seguents propietats esta be que no tinguin ni width ni height*/
+
+     align-items: flex-end; /*Ordena els elements element per element en el eje transersal es a dir no el principal sempre i quan en els elements fills no els hi haguem posat un height i width. 
+     Exemple: si posem el flex-direction row i align-items flexend, et posara els items abaix de tot i no a la dreta (x). Hi han diferents propietats:
+     strech, center, baseline(se alinean en funcio del text el text sera una line recta encara que els elements tinguin tamany diferent), flex-start, flex-end
+     treballa per cada linea individual.
+     ;*/
+
+     align-content:flex-end ; /*alinea tots els items en el eje trasversal NO funciona quan estan els elements en una linea. Funciona com un tot. Es a dir quan flex-wrap es nowrap no funciona */
+
+     
+
+}
+
+
+/*PROPIETATS DE LOS HIJOS*/
+.item{
+    background-color: blue;
+    border: 5px solid green;
+    flex-grow: 1; /*factor de crecimiento, los items si hay espacio sobrante en el contenedor aprovecharan ese espacio el valor de 1. 
+    Exemple: si el contenedor te 1000px i cada item val 100px ens sobraran 700px llavors els hem divitat entre 3 que son 233.33 + eñs 100 de cada item quedarà un total de 333.33x3 = 100px*/
+
+    flex-shrink: 1; /*es el mateix pero en reduccion. Cuando la caja no tenga espacio sobrante hacemos lo mismo pero con el flex-grow pero el efecte serà el contrari*/
+
+    flex-basis:auto; /*si es columna el flexbasis representa el height i si es fila representa l'amplada*/
+
+    order: 0; /*representa l'ordre dels elements fills en en la caixa flexbox. un valor menor sempre anira abans que un major.
+    Exemple: tinc 5 items i esta definit amb un 0 pero si al item 2 li poso order 1, s'anira al final pq tots son 0 i ell es 1*/
+
+    align-self: ; /* mateixos valors de align-items afecta al eix transveral basicament es com align-items pero sobreescriu un valor d'un item. Per exemple si volem que unn item sigui diferent a un altre 
+    el que fem es aplicarli individualment align-self  */
+
+}
+
+

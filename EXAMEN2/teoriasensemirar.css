@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: wheat;
+}
+
+.block{
+    background-color: #800080;
+    height: 200px;
+    width: 100px; /*se desplaza hacia abajo*/
+    
+}
+
+.inline{
+    background-color: lightcoral;
+    color: inherit;
+    /*los elementos en linea no tienen medidas lo que influye es el texto que tengan*/
+}
+

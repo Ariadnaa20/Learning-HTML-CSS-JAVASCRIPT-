@@ -1,0 +1,79 @@
+html, body {
+    height: 0;
+    margin: 0;
+}
+
+
+/*un exemple*/
+.transicion{
+    background: blueviolet;
+    width: 200px;
+    height: 200px ;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px black; 
+    transition: background-color, box-shadow, width 2s; /*llamas a la transicion*/
+}
+
+/*una transicion se produce con una pseudoclase*/
+
+.transicion:hover{
+    background-color: blue;
+    box-shadow: 10px 10px 4px gray;
+    width: 400px; 
+}
+
+
+
+
+
+
+/*un altre exemple*/
+.transition{
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    background-color: aqua;
+    border-radius: 5px;
+    transition: background-color 2s ease 3s, box-shadow 3s, transform 4s ease;
+}
+
+
+.transition:hover{
+    background-color: blueviolet;
+    box-shadow: 10px 10px 5px navy;
+    transform: scale(.4) translateX(50px);
+}
+
+
+/*Lo de transition: background-color, box-shadow, transform; es pot posar separat es a dir:
+transition-property: background-color, box-shadow, transform;
+transition-duration: 2s;
+transition-timing-function: ease-out;
+transition-delay : linear
+
+*/
+
+
+
+
+/*JUNTAR ANIMACION CON TRANSICION*/
+.animacion {
+    background-color: blue;
+    animation: cambioColor 1s ease;
+    transition: background-color 1s ease; /* Agrega una transición adicional para el cambio de color */
+  }
+
+
+  /*animacion que la llamamos arriba*/
+  @keyframes cambioColor {
+    from {
+      background-color: blue;
+    }
+    to {
+      background-color: red;
+    }
+  }
+  
+  
+  

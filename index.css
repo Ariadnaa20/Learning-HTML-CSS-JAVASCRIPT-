@@ -1,0 +1,52 @@
+el reset serveix per eliminar els estils predefinits i es copia per internet un reset. posar sempre el reset antes del html 
+ANIMACIONS
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: vh;  /*altura pantalla que el body sigui mes gran*/
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color:red;
+    animation: changeColor 3s linear 3; /*ease-in-out rapid a lent. el 3 es per a que es repeteixi*/ 
+}
+
+@keyframes changeColor {  /*per definir */
+    0%{
+        background-color: red;
+    }
+
+    25%{
+        background-color: yellow;
+    }
+
+    75%{
+        background-color: blue;
+    }
+    100%{
+        background-color:red;
+    }
+}
+
+
+
+/*
+d'una altre manera:
+
+.box:hover{  la difdrencia es que nomes puc fer una transio d'un color a un altre, inici final i sempre quan l'usuari faci algo. Nomes posar una transition
+    background-color:blue
+    transition: background-color/all (totes les propietats del hover) 3s linear;
+    transform: translateY(100px) (eix de les Y cap abaix) la ventatja
+}
+
+*/
+
+/*propietat transform
+
+
+
+*/

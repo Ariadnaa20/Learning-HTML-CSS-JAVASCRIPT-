@@ -1,0 +1,61 @@
+
+
+.padding{
+    background-color: blueviolet;
+    height: 30px;
+    width: 100px;
+    margin: 10px 10px; /*espacio entre los bordes i los elemnto sdel exterior*/
+    padding: 10px;
+    padding: 25px ;
+    padding: blue;
+    border: 20px solid black;
+
+    border-width: 20px;
+    border-style: solid;
+    border-color: black;
+
+    
+    
+}
+
+.propietats{
+    background-color: red;
+    height: 200px; 
+    width: 200px;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 20px;
+    border:5px solid blueviolet;
+    border-radius: 30px;
+
+    box-sizing: border-box;  /*Hace que la caja sea de 200*200 incloyendo el pading 20+20+20+20*/
+
+   /* display:inline; fa que el element bloque es fagi en linea*/
+
+   outline: 10px solid pink; /*es una proteccio i no modifica el tamany de la caixa(lletra ni pading)*/
+   outline-offset: 10px; /*es per separarho de la caixa. se puede poner hasta dentro de la caja es com si fos un borde */
+
+   box-shadow: inset 10px 10px 10px red;/*1 ejex, 2ejey, 3desenfoque(blur-radius), 4 color o tamany sombra(ancho spread-radius) 5 color.
+   el valor inset es per que la sobra estigui a dins. jo puc posar mutliples caixes si poso una coma exemple: 
+   inset 10px 10px 10px red, inset 10px 10px 10px blue
+   */
+
+   
+
+    
+    
+}
+
+a{
+    margin-top: 10px;
+    background-color: brown;
+    display: block; /*probaho*/
+    display:inline-block; /*fa que l'element sigui en linea pero podem aplicar les propietats del block q a inline no podiem com: widht i height*/
+
+
+    text-align: center;/*nomes funcnionara si posem un display block(no funcionara si es diepslay inline block) per convertir el enllaç en bloque ja qud de per si es inline
+    si posem un widht es decuadrara aixo es perque el text esta centrat pero la caixa no, llavors hem de posar margins*/
+    
+   
+}
+

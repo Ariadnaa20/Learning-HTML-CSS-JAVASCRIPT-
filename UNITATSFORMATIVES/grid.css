@@ -1,0 +1,310 @@
+/*CONCEPTES BASICS
+GRID CONTAINER
+GRID ITEMS (CELDAS)
+GRID LINES (LES LINEAS QUE SEPARAN LES COLUMNES O FILES)
+GRID TRACK(tota la columna fila)
+GRID CELL (celda  individual)
+GRID AREA (grid areas + d'una celda)
+*/
+
+    html {
+      box-sizing: border-box;
+      font-size: 16px;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+    a[href="#top"] {
+      margin: 1rem;
+      display: block;
+      font-size: 2rem;
+      text-align: center; /*es un elemento especifico i align-items es para todos*/
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 50vh;
+      text-align: center;
+    }
+
+    img {
+      margin: auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .menu {
+      margin-bottom: 100vh;
+      font-size: 125%;
+    }
+
+    .menu li {
+      margin-bottom: 1rem;
+    }
+
+    .container {  /*justyfy-content, align-content podem posar els valors de strech ,spacearound start end center, space-beetween, space-evently*/
+      margin: 0 auto;
+      width: 80%;
+      height: 80vh;
+      background-color: #222;
+      border: medium solid #000;
+    }
+
+    .item {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+
+
+    /*A PARTIR D'AQUI
+    GRID EXPLICIT 19 ITEMS */
+
+    .grid-explicit{
+        display:grid ;
+        /*GRID DE 3X3*/
+
+        /*grid-template-rows: 2rem 20vh 30%;*/  /*3 columnes i cada una en mesures diferents*/
+        /*grid-template-columns: 50% 100px 1fr;*/   /*3 files amb mesures diferents. fr es el espai sobrant. contenidor de 1000px 500 primera fila
+        100px segona i la tercera que es el espai sobrant 400px */
+
+        /*GRID DE 5X4*/
+        grid-template-columns: repeat(5, 20%); /*5 columnas cada una ocupe 20%. PUC POSAR 1fr*/
+        grid-template-rows: repeat(4, auto); /*4 filas i que se adapten. PUC POSAR 1fr*/
+
+        /*Espais entre filas i columnas*/
+        /*row-gap: 1rem;*/ /*separacio entre filas.Hay que ir con cuidado ya que se pueden desbordar del contenedor*/
+        /*column-gap: 2rem;*/ /*separacio entre filas*/
+       /* grid gap: 1rem 2rem; primer valor a filas i segon valor a columnas*/
+
+    }
+
+    .grid-explicit .item:nth-child(10){
+        color: red;
+        grid-row-start: 2; /*empieza en la linea 2 */
+        grid-row-end: 3; /*acaba en la linea 3 */
+        grid-column-start: 2;
+        grid-column-end:3;
+
+        /*es lo mismo pero en menos linas*/
+        grid-row: 2 / 3;
+        grid-column: 3 / 5;
+
+        /*es lo mismo pero en 1 linea*/
+        /*grid-area: grid-row-start /grid-row-end/grid-column-start/grid-column-end;*/
+        grid-area: 2 /3 / 3 / 5;
+    }
+
+    .grid-explicit .item:nth-child(12){
+        color: aqua;
+        grid-column: span 3; /*ocupa desde donde estas 3 columnas*/
+    }
+
+    .grid-explicit .item:nth-child(8){
+        color: rgb(55, 255, 0);
+        grid-column: 1 / span 3; /*ocupa desde donde estas 3 columnas*/
+    }
+
+    /*grid-column: 1/3 agafa desde l'inici de la 1 a l'inici de la 3 es decir 2 columnas;
+      grid-column: 1/ span 2 agada desde l'inici de la 1 al final de la 2; es decir 2 filas*/
+
+
+
+      /*GRID LINE NAMES 8 ITEMS*/
+      .grid-line-names{
+        display:grid;
+        /*GRID DE 3X3*/
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+
+        /*esto nos lia pero no esta de mas saberlo*/
+
+        grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+        grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4]
+      }
+
+      .grid-line-names .item:nth-child(3){
+        color: blueviolet;
+         /*esto nos lia pero no esta de mas saberlo*/
+        grid-row: linea-r3 / linea -r4;
+        grid-column: linea-c1 / linea-c4
+      }
+
+
+
+      /*GRID AREAS 2X3, la mejor solucion*/
+      .grid-areas{
+        display:grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: 100px repeat(2, 1fr) 60px; /*4 filas las 2 segundas ocuparan 1fr*/
+        grid-template-areas: 
+        "header header"
+        "content sidebar"
+        "content sidebar"  /*soi quiero dejar una cela vacia pongo en lugar del nombre pues un . Ejemplo: "content ."*/
+        "footer footer";
+      }
+
+      .header{
+        grid-area:header;
+      }
+
+      .content{
+        grid-area:content;
+      }
+
+      .sidebar{
+        grid-area:sidebar;
+      }
+
+      .footer{
+        grid-area:footer;
+      }
+
+
+
+      /*GRID IMPLICIT 4X3*/
+
+
+      .grid-implicit{
+        display: grid;
+        display: inline-grid; 
+        /* si vols posar mes cuadircules al costat fes l'anchura petita: width: 40%;*/
+
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,200px);
+
+       
+
+      }
+
+      .grid-flow{
+        /*
+        /*display: inline-grid; es comporti com un element de linea*/
+        /* si vols posar mes cuadircules al costat fes l'anchura petita: width: 40%;*/
+        
+        grid-auto-flow: row;  /*es como flexdirection colum o row en la grid implicita*/
+        grid-auto-rows: auto; /* com es comporten en la grid implicita*/
+        grid-auto-column: 10px; /* com es comporten en la grid implicita*/
+      }
+
+
+      /*GRID SUPERPOSICION*/
+      .grid-layers{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        
+      }
+
+      .grid-layers .item:nth-child(1){
+        background-color: gold;
+        grid-column: 1 / 3;  /*va de la linea 1 a la linea 3*/
+        grid-row: 1/ span 3 ; /*va de la linea 1 al final de la 3*/
+      }
+
+      .grid-layers .item:nth-child(2){
+        background-color: rgb(255, 115, 0);
+        grid-column: 3 / 5;
+        grid-row: 1/3 ;
+      }
+      .grid-layers .item:nth-child(3){
+        background-color: rgb(0, 89, 255);
+        grid-column: 1 / 3;
+        grid-row: 3/5 ;
+      }
+
+      .grid-layers .item:nth-child(4){
+        background-color: rgb(9, 255, 0);
+        grid-column: 3 / 5;
+        grid-row: 3/5 ;
+      }
+
+      .grid-layers .item:nth-child(5){
+        background-color: rgb(255, 0, 149);
+        grid-column: 2 / 4;
+        grid-row: 2/4 ;
+      }
+
+
+      /*GRID ORDENAR ITEMS*/
+      .grid-order{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        /*grid-auto-flow: column; pasara lo mismo pero en columna*/
+      }
+
+      .grid-order .item:nth-child(1){
+        order: 1;  /*por defecto todos los items son order 0 pero si yo le pongo order 1 significa que sera el ultimo*/
+      }
+
+      .grid-order .item:nth-child(2){
+        order: 2;  /*por defecto todos los items son order 0 pero si yo le pongo order 1 significa que sera el ultimo*/
+      }
+
+      .grid-order .item:nth-child(5){
+        order: -1;  /*por defecto todos los items son order 0 pero si yo le pongo order 1 significa que sera el ultimo*/
+        
+      }
+
+
+      /*GRID ALINEAMIENTO*/
+      .grid-align{
+        display: grid;
+        grid-template-columns: repeat(3, 200px);  /*no ocupa todo el contenedor sino solo 200px i en estos 200px estaran los 5 items*/
+        grid-template-rows: repeat(2, 200px);
+        
+        justify-items: start ;  /* alinear el contingut en la celda, todos los itemsEN EL EJE X. en flex seria justify content propietat per defecte stretch*/
+        align-items: start;   /*alinear el continut de la cela EN EL EJE Y. todos los items  */
+
+        justify-self: end;  /*alienacion horizonatal solo un item*/
+        align-self: end; /*alienacion vertical solo un item*/
+
+        justify-content: end; /* controlar l'espai i alinea las columnas i las filas de grid en el eje horixontal X*/
+        align-content: start; /* controlar l'espai en el eje veritcial Y solo en GRID*/
+        
+      }
+
+      .grid-align .item:nth-child(3){
+        justify-self: end;  /*alienacion horizonatal solo un item*/
+        align-self: end; /*alienacion vertical solo un item*/
+      } 
+
+
+      /*GRID ALIGN-TAGS*/
+
+      .grid-align-tracks{
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(2, 200px);
+        justify-content: end; /*alinea las columnas i las filas de grid en el eje horixontal X*/
+        align-content: start; /*en el eje veritcial Y*/
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

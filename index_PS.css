@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 140px; /* Afegeix un espai superior per centrar verticalment */
+}
+
+
+.estrella {
+  
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 200px solid goldenrod; /* Crea la part inferior de la estrella */
+  position: relative; /* Estableix la posició relativa per a posicionar els elements fills */
+}
+
+.estrella::after {
+  content: " "; /* Afegeix contingut fictici per permetre l'estil del pseudo-element */
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 200px solid goldenrod; /* Crea la part superior de la estrella */
+  position: absolute; /* Estableix la posició absoluta per a posicionament precís */
+  top: 50px; /* Ajusta la posició vertical superior del segon triangle */
+  left: -100px; /* Ajusta la posició horitzontal del segon triangle */
+}
+
+
+

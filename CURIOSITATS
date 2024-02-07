@@ -1,0 +1,225 @@
+APUNTS EXAMEN 2
+
+- S010
+
+CSS Properties:
+1. @media: s'utilitza quan a traves d'uns parametres podem definir que quan es cumpleixin aquests es converteixi responsive i
+s'adapti a diferents dispositius
+
+
+2. max-width:
+es quan volem especificar el ample maxim del contenedor on s'aplicaran els estils i aquest per exemple s'aplicar:
+
+/* Estilos para dispositivos con un ancho maximo de  600px */
+@media (max-width: 600px) {
+    body {
+        background-color: lightpink;
+        color: navy;
+        font-size: 16px;
+    }
+}
+
+
+3./*el ancho mínimo del viewport es de 600 para que se apliquen los estilos
+@media (min-width: 601px) { ... }
+min-width
+HTML <link> tag Attribute:
+media="screen and (max-width: ...)"
+
+4. HTML <link> tag Attribute: media="screen and (max-width: ...)"
+la etiqueta serveix per enlaçar fulles de documents externs i el atribut media serveix per especificar el tipus de medi de comunicacio 
+i les condicions que tindrà
+<!-- Hoja de estilo principal -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Hoja de estilo para pantallas de hasta 600px de ancho -->
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 600px)"> 
+
+- S011
+Animaciones CSS
+
+1. animation-name: especifica el nom de la animació
+@keyframes desvanecer {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .elemento {
+    animation-name: desvanecer;
+}
+
+
+2. animation-duration: Define cuánto tiempo dura una animación.
+.mi-elemento {
+    animation-duration: 2s;
+}
+
+
+3.animation-timing-function: Controla cómo avanza la animación (por ejemplo, lineal, fácil).
+.mi-elemento {
+    animation-timing-function: ease-in-out;
+}
+
+
+4.animation-delay: Establece un retraso antes de que comience la animación.
+.mi-elemento {
+    animation-delay: 1s;
+}
+
+
+5.animation-iteration-count: Define cuántas veces se repetirá la animación.
+.mi-elemento {
+    animation-iteration-count: 3;
+}
+
+
+6. animation-fill-mode: Especifica el estilo de un elemento cuando la animación no se está ejecutando. 
+el nombre de la propiedad para que una animación mantenga su estado final al acabarse.
+.mi-elemento {
+    animation-fill-mode: forwards;
+}
+
+7.@keyframes: Permite definir el aspecto de la animación en varios puntos durante su duración.
+@keyframes desvanecer {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+TRANSICION CSS
+Queremos definir una transición entre varias propiedades CSS pero solo con una única palabra. ¿Qué palabra seria?
+
+div {
+  transition: all 1s;
+}
+
+1. transition-duration: Especifica cuánto tiempo tarda una transición.
+.elemento {
+    transition-duration: 2s; /* La transición durará 2 segundos */
+}
+
+2. transition-timing-function:  Define cómo cambia la velocidad de la transición a lo largo de su duración.
+.elemento {
+    transition-timing-function: ease-in; /* La transición comienza lentamente y luego se acelera */
+}
+
+3. transition-delay: Establece un retraso antes de que comience la transición.
+.elemento {
+    transition-delay: 500ms; /* Comienza 500 milisegundos después de un evento desencadenante */
+}
+
+TRANSFORMACION CSS
+
+1. rotate: Rota el elemento.
+.elemento {
+    transform: rotate(45deg); /* Rota el elemento 45 grados */
+}
+
+2. translate: Mueve el elemento en el eje X y Y.
+.elemento {
+    transform: translate(100px, 50px); /* Mueve el elemento 100px a la derecha y 50px hacia abajo */
+}
+
+3. translateY(vertical) y translateX(horizontal):  Mueve el elemento solo en el eje Y o X.
+.elemento {
+    transform: translateY(100px); /* Mueve el elemento 100px hacia abajo */
+}
+  
+ .otro-elemento {
+    transform: translateX(50px); /* Mueve el elemento 50px a la derecha */
+}
+
+4. scale: Cambia el tamaño del elemento.
+.elemento {
+    transform: scale(1.5); /* Aumenta el tamaño del elemento en un 50% */
+  }
+
+
+
+-S012
+CSS PSEUDOELEMENTOS
+Los pseudo-elementos en CSS, como ::after y ::before, junto con propiedades como float y clear, 
+son herramientas esenciales para controlar la disposición y presentación de los elementos en una página web.
+se utilizan para insertar contenido antes o después del contenido de un elemento
+
+1. after (después)   // sempre portar la propietat content
+      html: <div class="mensaje">Hola Mundo</div>
+      
+      css: 
+      .mensaje::after {
+        content: " 👋";
+        color: blue;
+      }
+2. before (antes)   // sempre portar la propietat content
+      html: <p class="destacado">Nota importante</p>
+
+      css: 
+      .destacado::before {
+        content: "⚠️ ";
+        color: red;
+      }
+3. float ( un elemento que se mueva a la izquierda o derecha)
+     html: 
+     <div class="contenedor">
+        <img src="imagen.jpg" class="flotante" />
+        <p>Este es un texto que fluye alrededor de la imagen flotante.</p>
+    </div>
+
+     css:
+     .flotante {
+        float: left;
+        margin-right: 10px;
+      }
+4. clear (s'utiliza para comprovar el flujo de elementos alrededor de un elemento flotante.)
+     html: 
+     <div class="flotante">Elemento flotante</div>
+     <div class="limpiar">Este elemento no fluye alrededor del anterior.</div>
+
+     css:
+     .flotante {
+        float: left;
+      }
+      
+      .limpiar {
+        clear: left;
+      }
+
+Exemples w3schols
+
+Pseudoelements
+p::first-line: estilos a la primera línea de un párrafo (<p>)
+
+p::first-letter: estilos a la primera letra de un párrafo.
+
+p.intro::first-letter son combiables amb classes: Aquí se combina un selector de clase con un pseudo-elemento.
+ Aplica estilos a la primera letra de un párrafo que tiene la clase "intro"
+
+h1::before: inserta contenido antes de un elemento <h1>.
+ Es útil para agregar íconos, imágenes pequeñas o texto adicional antes de un encabezado.
+
+h1::after: inserta contenido después del elemento <h1>
+
+::marker: para estilizar los marcadores de listas, como los puntos en listas desordenadas o los números en listas ordenadas.
+
+::selection: aplicar estilos a la porción de texto que un usuario ha seleccionado
+
+Pseudoclases
+https://www.w3schools.com/css/css_pseudo_elements.asp
+      
+      
+      
+CSS Pseudo-elements:
+::after
+::before
+float
+clear
+
+
+S13
+
+
+
+
+
+
+
+

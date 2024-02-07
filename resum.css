@@ -1,0 +1,445 @@
+/*APUNTS A PARTIR DEL S04*/
+
+/* APUNTS CSS. RECORDA L'ORDRE DE ESPECIFICITAT ID>CLASS>TAG
+      UN ID ES ÚNIC CAP ELEMENT EL POT TORNAR A REPETIR: #header
+      UNA CLASSE POT ENGLOBAR MES ELEMENTS: .header
+      TAG: SELECCIONA TOTS ELS TAGS PER EXEMPLE QUE SIGUIN P  p{}
+
+
+      Selecciona elementos que son descendientes de otro elemento i no importa el anidamiento: div span seleccionara tots els 
+      span dins de divs independentment d'altres ekelemnts que hi hagin pel mig
+
+
+      Selecciona elementos que son hijos directos de otro elemento. ul > li
+
+      NESTED SELECTORS:ruta seleciona elements decendents d'altres .div .p a selecciona los a dins de un p que estigui dins d'un div
+
+      MULTISELECTOR: h1, h2, .clase-ejemplo, #id-ejemplo selecciona molts tipus
+
+      reset.css per eliminar qualsevol estil predeterminat i normalize.css es lo mismo
+      pero hi han estils com animacions.. que el navegador potse rno ho soporta llavors podem utlitzar prefijos propietarios programa prepros
+
+
+
+    Reglas q son marcadas com important 
+    Reglas inline
+    Reglas que tienen id
+    classes 
+     pseudoclases 
+    tags
+    valors heredats
+    valors per defecte  
+*/
+
+
+/* EJEMPLO ID a H1, este no se puede repetir*/
+#ejemploID{
+    color:blue
+}
+/*EJEMPLO DE CLASSE A NAV, englobarà todo lo que haya dentro de nav*/
+.ejemploCLASSE{
+    color:red
+}
+/*EJEMPLO DE TAG A P, englobarà todos los p*/
+p{
+    color:aqua
+}
+
+/* EL MULTISECLECTOR SE HACE solo separando con comas:
+ h1, h2, .clase-ejemplo, #id-ejemplo {
+    color: red;
+    font-size: 20px;
+}
+*/
+
+/* LOS NESTED SELECTORS se seleccionan elementos dentro de otros: se seleccionan todos los h2 dentrp de subcontenedor q esta dentro de contenedor
+.contenedor .sub-contenedor h2 {                                los puntos es pq son classes pero ya esta
+    color: green;
+}
+*/
+
+/*LAS PSEUDOCLASES se seleccionan elementos con un estado especifico
+Pseudoclase para cuando se pasa el cursor sobre el enlace 
+a:hover {
+    color: red;
+}
+
+hay mas que te pueden salir en el examen:
+a:link se aplica a todos los enlaces no visitados.
+a:visited se aplica a los enlaces que ya han sido visitados por el usuario.
+a:hover cambia el color del enlace a rojo cuando el usuario pasa el cursor sobre él.
+a:active cambia el color del enlace a amarillo en el momento en que se hace clic en él.
+button:focus aplica un borde verde alrededor del botón cuando está enfocado (por ejemplo, cuando se navega hasta él usando el teclado).
+button:active cambia el color de fondo del botón cuando está siendo presionado.
+button:hover cambia lo que sea cuando el cursor esta encima de el 
+
+*/
+
+/*PROPIEDADES CSS*/
+p {  /*TEXT*/
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px; /*como sera de grande*/
+    line-height: 1.5; /*como estaran separadas las lineas si es 1 ocupa el q oucpq la lletra si es 2 0,5 per adalt i un 0,5 per abaix*/
+    font-weight: bold; /*grosor */
+    font-style: normal;  /*estilo de la fuente*/
+    background-color: blueviolet; /*color al fondo*/
+    color: #000; /*color al texto*/
+}
+
+
+/*UNITATS CSS
+
+PX
+font-size: 16px;
+width: 200px;
+
+REM tamany relatiu respecte al tamany de font del element arrel q es el html
+html {
+  font-size: 16px;  Tamaño de fuente base 
+}
+
+body {
+  font-size: 1.2rem; 1.2 veces el tamaño de fuente base (16px)  en verad el body sera 19,2px 
+}
+
+h1{
+    font-size: 0.5rem;  2veces el tamaño de fuente seria 16*0.5=8px
+}
+
+EM  tamany relatiu respecte al tamany de font del element pare. per defecte 5em = 16px 
+font-size: 1.2em;
+padding: 0.5em;
+
+html {
+  font-size: 16px;  Tamaño de fuente base 
+}
+
+body {
+  font-size: 1.2em;  1.2 veces el tamaño de fuente del elemento padre (html) 16*1.2=19.2px
+}
+
+p {
+  font-size: 1.5em;  1.5 veces el tamaño de fuente del elemento padre (body) 19.2*1.5=28.8px
+}
+
+
+% percentatge del element pare
+width: 50%;
+height: 75%;
+
+VW
+div {
+  width: 50vw; /* El ancho del elemento será el 50% del ancho de la ventana gráfica 0.50*1000=500px
+}
+
+VH
+div {
+  height: 75vh; /* La altura del elemento será el 75% de la altura de la ventana gráfica  0.75*1000= 750px
+                                                                                          0.75*800=600px
+}
+
+
+
+
+
+
+
+*/
+
+
+
+/*VARIABLES  les variables en css son propietats que es podran utlitzar multiples vegades i es defineixen aixi:
+   :root{
+    --primarycolor:blue
+    --secundarycolor:green
+   }
+
+   h1{
+    color:var(--primarycolor)
+   }
+
+   pot pasar que no sapiguem si existeix la variable:
+
+   h1{
+    color:var(--myvarejemplo, red) el color sera vermell si la variable mi varejemplo no esta definida
+   }
+
+*/
+
+
+/*SPAN
+es un contenedor en linea este no da salto en linea como div... 
+
+*/
+
+
+
+
+/*BOX MODEL. al final una web son tot caixes amb elements. */
+/*BORDER: borde serian els limits de la caixa*/
+p{
+    border:2px
+}
+p{   /*BORDER  poner en body siempre */
+    border-width: 3px; /*ancho,tamanyo del borde NO TE LO SABES */
+    border-style: solid; /*estilo del borde . None, hidden, dotted, dashed*/
+    border-color: blueviolet;   
+    border-radius: 10%; /*redondea las esquinas*/
+    border-top-left-radius: 10%; /*redondea una esquina especifica tmb puede ser right*/
+
+
+    box-shadow: 10px; /*añade una sombra
+    et crea una altra caixa negra que anira a sota del element, ejex ejey
+    
+    */
+    box-sizing: border-box; /*recomenacio ferp a,b el selector universL :* */
+    /*
+    
+    15px:derecha
+    10px: bottom
+
+    BOX-SHADOW
+
+    1r valor : eje x desplazamineto horizontal
+    2ndo valor : eje y desplazamineto verical 
+    3r valor: desenfoque de la sombra(blur)
+    4to valor: color de la sombra
+    
+
+    border-top-width:;
+    border-right-width:;  el witdh se puede subtituir por color i style
+    border-bottom-width:;
+    border-left-width:;*/
+
+    /*  radius
+    Superior izquierda: 5px
+    Superior derecha: 10px
+    Inferior derecha: 15px o bootom
+    Inferior izquierda: 20px*/
+
+
+}
+
+/*OTRAS:*/
+
+body{
+  background-color: black;
+  color: wheat;
+}
+
+.block{
+  background-color: #800080;
+  height: 200px; /*tiene mas altura pero siempre es desde el texto hacia abajo*/
+  width: 100px; /*ocupan toda la anchura i claro si le pongo un margin-left auto no hara nada pq ya esta a la izquierda. Pero si el witdh es mas pequeño el elemento si se desplazara*/
+}
+
+.inline{
+  background-color: lightcoral;
+  color: inherit;
+  /*los elementos en linea no tienen medidas lo que influye es el texto que tengan*/
+}
+
+
+/*BACKGROUND*/
+body{       
+    background-image: url("");
+    background-repeat: no-repeat; /*defineix com es repetirà una imatge al fons*/
+    background-size: cover; /*definex el tamany de la imatge de fons, ocupi tot l'espai disponible NO TE LO SABES*/
+    background-attachment: fixed; /*diu si una imatge de fons es fixa o es desplaça. scroll or local NO TE LO SABES*/
+    filter: blur(50%);  /* imatge difuminada*/
+    filter:grayscale(10%)  /* imatge en blanc i negre*/
+
+}
+
+body{  
+  /*  MARGIN: Es el espacio exterior alrededor de un elemento, 
+    fuera de cualquier borde definido. El margen separa el elemento de otros elementos en la página. Si ponemos 4 valores van en el sentido de las agujas del reloj
+    poner siempre margin 0;
+    En los elementos de bloque:
+    4 valores: top right botom left
+    3 valores: top right+left bottom
+    2 valores: top+bottom left+right
+    1 valor: aplica a todos
+
+    En los elementos en linea: 
+    solo tienen margenes horizontales , es decir, izquierda i derecha
+    */
+
+
+    margin:5px; /*defineix el marge exterior d'un document*/
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px; /*Aumentar el margin-left mueve el elemento entero hacia la derecha, afecta el espacio fuera del elemento,
+     entre el elemento y otros elementos o bordes en su entorno.*/
+    margin-bottom: 10px;  /*posar un espai despres del borde inferior de un element. Es a dir es per separar mes un element
+    d'un altre*/
+    margin-left:auto; /*pegamos el elemento a la derecha*/
+    margin-right:auto; /*pegamos el elemento a la izquierda*/  /*si pongo los dos el elemento se centra*/
+    margin: 0 auto; /*centra un element bloque hortizontalment dins del seu contenedor*/
+    cursor: pointer; /*cambia l'aparença del cursor*/
+    outline: 2px solid green; /*es el que esta per fora del borde, es per evitar que si es posan molts px doncs es descuadri la pagina. es una proteccio. no modifica la caixa*/
+    display:block /*convertir un element en bloque, que ocupi tot el widh i fagi un salt de linea */
+    
+}
+position: relative; /*es per moure les caixes que puguin sortir,moures de dins del seu contenedor*/
+position:absolute; /*es per moure les caixes respecte el viewport encara que estiguin dins d'un contendir/div*/
+
+body{   /*padding afecta entre el borde de la caixa i els elements interiors del element.Crece la caja por dentro*/
+    padding: 10px; /*defineix el espai interior d'un document*/
+    padding-top: 10px; /* espai entre el text i el borde d'adalt. */
+    padding-right: 10px; /* espai entre el text i el borde. llavors hi haura mes espai a la dreta*/
+    padding-left: 10px; /*espacio interno entre el contenido de un elemento y su borde izquierdo.*/
+    padding-bottom: 10px; /*poner un espacio entre la letra i el borde . 
+     añadiría espacio dentro del elemento, entre el contenido y el borde inferior del elemento.*/
+
+/*
+    En los elementos de bloque:
+    4 valores: top right botom left
+    3 valores: top right+left bottom
+    2 valores: top+bottom left+right
+    1 valor: aplica a todos
+
+    En los elementos en linea: no tiene limitaciones como los de blocke
+  */
+    
+}
+
+
+/*S06*/
+
+body{
+    text-decoration: underline; /* se li afegeix una decoració al text*/
+    box-sizing: border-box; /*defineix com es calculen les dimensions totals d'un text incloent padding. 
+    Si queremos que el valor de la propiedad "width" de un elemento sea el espacio que ocupa el contenido + el padding + el borde
+    NO TE LA SABES*/
+
+    /*el text align es per moure el text de dins d'una caixa no la caixa en si. La caixa en si es fa amb el margin */
+
+
+    text-align: center; /*estableix la alineació horitzonatal nomes del contingut d'un element de block o un contenidor sempre i quan no tingui un ancho declarado*/
+    text-align: left;
+    text-align: right;
+    text-align: justify; /*ocupa tot el ancho*/
+
+
+
+    display: none; /*oculta un element sense deixar espai d'on estava*/
+    display: inline-block;  /*fa que l'element es coloqui en "linea" per espesificar alt i ample*/
+    display:block
+    
+}
+
+
+/*En Flexbox, tienes dos ejes principales:
+
+Eje principal: Es la dirección en la que se colocan los elementos flexibles en fila o en columna. 
+Por defecto, en una fila (row), este eje es horizontal.
+       - justify-content controla cómo se distribuyen los elementos horizontalmente dentro del contenedor. 
+
+Eje transversal: Es perpendicular al eje principal. Por defecto, en una fila (row), este eje es vertical.
+       - align-items controla cómo se alinean los elementos verticalmente dentro del contenedor.
+       -align-self 1 elemento
+
+*/
+body{
+
+  /*css triks flexbox*/
+
+  /*PROPIETATS DEL CONTENIDOR FLEX SOBRE COM ACTUARÁN TOTS ELS ITEMS . Dos ejes horitzontal i vertical*/
+
+    display: flex;  /*fa que el contenidor faciliti la distribució i alineacio dels elements fills i tambe RESPONSIVE.
+    O sigui en lloc de posar display: block posem flex i aixi els elements es distribueixen millom en caixes iguals.
+    En base el contingut mantè l'altura. 
+    - Si volem modificarho sempre hem de posar height amb width*/
+
+    flex-direction: column; /*PROPIETAT DE CONTENIDOR NO ELEMENT. Queremos mostrar los elementos dentro de un contenedor flex en formato vertical eje y.
+    Tambe hi ha Row: es comporten com files, eje x. Hi ha row-reverse i column-reverse, en lloc de esquerra dreta va de dreta a esquerra
+    
+  */
+
+    justify-content: space-around; /* PROPIETAT DE CONTENIDOR Distribuye el espacio alrededor de los elementos CUIDADO*/
+
+    justify-content:center; /* PROPIETAT DE CONTENIDOR alinear horizontalmente sus items bno depende del valor en flex direction. 
+    space-between li dona margins automatics als elements
+    Com s'aliean els items en el seu eix prinicpal: /* flex-start o flex-end, center, space-between, space-around, space-evenly */
+
+    align-items: center; /* Alinea los elementos verticalmente o eje transversal normalment quan es una linea . hi ha center, flex-start... 
+    si hi han mas lineas es millor align-content:center*/
+
+    flex:1; /*forma avrebiada  de dir q l'element ocupi tot l'espai dispobinle pero tambe reduirse si es necessari*/
+
+    flex-grow: 1px; /*els elements creixen depen del espai disponible*/
+
+    flex-flow:column wrap; /*es per definir el flex direction i el flex-wrap en una linea*/
+
+    
+
+    flex-wrap: wrap; /*PROPIEAT DE CONTENIDOR et respecta les mesures de les caixes quan fas responsivw en lloc de modifcarla te la tira abaix*/
+
+    
+
+    line-height: 1.5rem;  /*Queremos aumentar el tamaño de las lineas de un texto*/
+
+}
+
+/*GRID*/
+div{
+    display:grid /*fas que es converteixi en un grid layout i contenidor de cuadricula prganitzar els elements fills.*/
+
+
+    /*grid-template-columns: 100px 200px auto;   DEFINEIX EL NUM I TAMANY DE LES COLUMNAS DE LA CUADRICULA */
+
+     /*grid-template-rows: 100px 200px auto; DEFINEIX EL NUM I TAMANY DE LES FILAS  DE LA CUADRICULA */
+
+    /*grid-gap: 20px; /*estableix la separacio entre filas i columnas en un grid
+
+    /*grid-column: 1/ span 3    Dirà on s'ubicarà un element fill en las columnas i filas
+
+      grid-grow: 2              Ubicat a la fila 2 */
+
+}
+
+.container {
+    grid-template-columns: repeat(autofit, minmax(100px, 1fr));    
+    grid-template-rows: repeat(autofit, minmax(100px, 1fr));
+    /*s'utlitza pe crear un numero flexible de filas o columnas que s'ajustin al tamany del contenidor
+    Per exemple: ocupa tot l'espai disponible i el minim ha de ser 100px i el maxim 1fr*/
+  }
+
+  /* GRID TEMPLATE AREAS I GRID AREAS. Serveix per crear cuadriculas amb els elements*/
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header'
+      'main main sidebar'
+      'footer footer footer';
+  }
+  
+  .header {
+    grid-area: header;
+    
+  }
+  
+  .main {
+    grid-area: main;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  
+grid-column: 1/3 agafa desde l'inici de la 1 a l'inici de la 3;
+grid-column: 1/ span 2 agada desde l'inici de la 1 al final de la 2;
+
+RESPONSIVE: 
+meta 
+@media 
+grid-template-areas:  repeat...(3, 1fr)
+
+  
+
+  

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulari.css">        
+</head>
+<body>
+    <form class="form" method="POST" action="procesar_formulario.php">
+        <h2 class="form__title">Inicia sesión</h2>
+        <p class="form__paragraph">¿Aún no tienes una cuenta? <a href="#" class="form__link">Entra aquí</a></p>
+
+        <div class="form__container">
+            <div class="from__group">
+                <input type="text" id="name" class="form__input" placeholder=" ">
+                <label for="name" class="form__label">Nombre:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="from__group">
+                <input type="text" id="user" class="form__input" placeholder=" ">
+                <label for="user" class="form__label">Usuario:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="from__group">
+                <input type="text" id="password" class="form__input" placeholder=" ">
+                <label for="password" class="form__label">Contrasenya:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="form__group">
+                <input type="number" id="age" class="form__input" placeholder=" ">
+                <label for="age" class="form__label">Edad:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="form__group">
+                <input type="date" id="birthDate" class="form__input" placeholder=" ">
+                <label for="birthDate" class="form__label">Fecha de Nacimiento:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="form__group">
+                <input type="checkbox" id="subscribe" class="form__checkbox">
+                <label for="subscribe" class="form__label">Suscribirse al boletín</label>
+
+                <input type="checkbox" id="nosubscribe" class="form__checkbox">
+                <label for="nosubscribe" class="form__label">No Suscribirse al boletín</label>
+            </div>
+
+            <div class="form__group">
+                <input type="radio" id="male" name="gender" class="form__radio">
+                <label for="male" class="form__label">Masculino</label>
+
+                <input type="radio" id="female" name="gender" class="form__radio">
+                <label for="female" class="form__label">Femenino</label>
+            </div>
+
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí"></textarea>
+
+            <select id="country" name="country">
+               <option value="spain">España</option>
+               <option value="france">Francia</option>
+               <option value="germany">Alemania</option>
+            </select>
+
+            <button class= "submit" type="submit">Enviar</button>
+            <button class= "submit" type="reset">Restablecer</button>
+            
+
+        </div>
+
+    </form>
+    
+</body>
+</html>
+
+
+<!--
+    <form method="POST" action="procesar_formulario.php">
+     Contenido del formulario 
+    <input type="submit" value="Enviar">
+    </form>
+
+
+    <label>Select many materials:</label>
+  <input type="checkbox" name="materials"><label>Iron</label>
+   <input type="checkbox" name="materials"><label>Wood</label>
+
+   <select name="choices">
+  <option value="1">1st choice</option>
+  <option value="2">2nd choice</option>
+</select>
+
+
+
+Completa el siguiente código para poder vincular el <label> con el <input>. "" (Pon todos los caracteres que falten)
+
+<label for="Resposta Pregunta 4
+user-name
+">Username: </label>
+<input type="text" id="user-name" name="username">
+
+
+Escribe el valor de la propiedad "type" del elemento <input> para que el usuario solo pueda escribir cifras numéricas.
+
+<input type="Resposta Pregunta 5
+number
+">
+
+
+-->

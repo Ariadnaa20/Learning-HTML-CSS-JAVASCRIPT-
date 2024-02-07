@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+.container{
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+.circle{
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    background: blue;
+    border-radius: 50%;
+
+    animation-name: CambiarColor;
+    animation-duration: 3s;  /*cuanto va a durar*/
+    animation-iteration-count: infinite; /*cuantas veces se va areptir la animación*/
+    animation-direction: normal ; /*de donde a donde va la animacion, es decir 
+    Ejemplo: el valor normal es de 0 a 100%, el valor reverse 100 al 0, 
+             el valor alternate es de 0-100-0
+             el valor alternate reverse es de 100-0-100*/
+             
+    
+    animation-fill-mode: forwards ; /*que va a pasar antes i despues de la animación
+    Ejemplo: el valor forwards significa que cuando se acabe la animacion tendra los estilos del 100%.
+             el valor backwards es lo mismo pero antes de que empieze la animacion tendra los estilos i para que funcione necesitamos:
+             otro valor es both que son los dos*/
+    
+    animation-delay: 2s; /*tendra los estilos de la animacion 2 seg antes de que empieze. esta no existe i antes no hemos puesto backwards*/
+
+    animation-timing-function:ease ; /*define la curva de aceleracion de la animacion.
+        valor ease: agumenta la velocidad en la mitad de animacion i disminuyendola al final
+        valor ease-in: va de lento a rapido progressivamente
+        valor ease-in-out: va de lento rapido lento
+        valor ease-out: va de rapido a lento
+        valor linear: constante no acelera ni dectremnta*/
+
+     /*En una linea puc posar totes les propietats
+     animation: alternate infinite mover 3s 2s; el segon valor (2s) es el delay
+     
+     */   
+
+     /*todas las propiedades en 1 linea*/
+
+     animation: nombreAnimacion 2s ease-in-out 1s; /* */
+}
+
+circle:hover{
+    animation-play-state:paused; /*o running. paused quan pasi per sobre donçs parara*/
+}
+
+
+
+@keyframes CambiarColor {
+    0%{ /*en lloc de posar 0 podem posar from*/
+        background-color: blueviolet;
+        transform: scale(2); /*medida*/
+    }
+
+    50%{
+        transform: scale(.5);
+        transform: translateX(0);  /*para moverlo en el eje de las X*/
+        background-color: blanchedalmond;
+
+
+    }
+
+    100%{ /*en lloc de posar 100 podem posar to*/
+        background-color: brown;
+        transform: translateX(100%); /*que se mueva*/
+        
+    }
+
+
+}

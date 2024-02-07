@@ -1,0 +1,67 @@
+.container{
+    
+    margin: 0 auto;
+      width: 80%;
+      height: 80vh;
+      background-color: #aa6363;
+      border: medium solid #000000;
+      padding:15px;
+
+      display:grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: 400px repeat(2, 1fr) 200x; /*4 filas las 2 segundas ocuparan 1fr*/
+        grid-template-areas: 
+        "header header"
+        "content sidebar"
+        "content sidebar"  /*soi quiero dejar una cela vacia pongo en lugar del nombre pues un . Ejemplo: "content ."*/
+        "footer footer";
+}
+
+
+.item{
+    border: 2px solid black;
+}
+
+.header{
+    grid-area:header;
+    padding: 10px;
+  }
+
+  .content{
+    grid-area:content;
+    padding: 10px
+  }
+
+  .sidebar{
+    grid-area:sidebar;
+    padding: 10px;
+  }
+
+  .footer{
+    grid-area:footer;
+    padding: 10px;
+  }
+
+
+
+  @media screen and  (max-width: 600px){  /*@container (max-width: 600px)*/
+    .container{
+        grid-template-columns: auto;
+    }
+
+    .footer{
+        height: 100px;
+        justify-content: space-between;
+    }
+
+    .sidebar{
+        width: 60px;
+
+    }
+
+    .content{
+        width: 200px;
+    }
+  }
+
+  
