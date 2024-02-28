@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel> <!--channel molt importent-->
+  <title>Ejemplo de Canal RSS</title> <!--molt important-->
+  <link>http://www.ejemplo.com</link>
+  <description>Este es un canal RSS de ejemplo que proporciona actualizaciones sobre diversos temas.</description>
+  <language>es-es</language>
+  <pubDate>Tue, 07 Mar 2023 16:00:00 GMT</pubDate>
+  <lastBuildDate>Tue, 07 Mar 2023 16:00:00 GMT</lastBuildDate>
+  <docs>http://www.rssboard.org/rss-specification</docs>
+  <generator>Ejemplo de Generador RSS</generator>
+
+  <item>
+    <title>Noticia de Ejemplo 1</title>
+    <link>http://www.ejemplo.com/noticia1</link> <!--link molt important-->
+    <description>Este es el resumen de la noticia de ejemplo 1.</description> <!--descripcio molt important-->
+    <author>autor@ejemplo.com (Autor de Ejemplo)</author>
+    <pubDate>Tue, 07 Mar 2023 12:00:00 GMT</pubDate>
+    <guid>http://www.ejemplo.com/noticia1</guid>
+  </item>
+
+  <item>
+    <title>Noticia de Ejemplo 2</title>
+    <link>http://www.ejemplo.com/noticia2</link>
+    <description>Este es el resumen de la noticia de ejemplo 2.</description>
+    <author>autor@ejemplo.com (Autor de Ejemplo)</author>
+    <pubDate>Tue, 07 Mar 2023 10:00:00 GMT</pubDate> <!--Dia de la semana, Dia Mes Año Hora:Minuto:Segundos Zona horaria-->
+    <guid>http://www.ejemplo.com/noticia2</guid>
+  </item>
+</channel>
+</rss>
+
+
+Etiquetes del RSS
+
+<title>: Requerido. Define el título del canal.
+<link>: Requerido. Define el hipervínculo al canal.
+<description>: Requerido. Describe el canal.
+<language>: Opcional. Especifica el idioma en el que está escrito el feed.
+<image>: Opcional. Permite mostrar una imagen cuando los agregadores presentan el feed.
+<generator>: Opcional. Especifica el programa utilizado para generar el feed.
+<docs>: Opcional. Especifica una URL a la documentación del formato utilizado en el feed.
+<lastBuildDate>: Opcional. Define la fecha de última modificación del contenido del feed.
+<managingEditor>: Opcional. Define el correo electrónico del editor del contenido del feed.
+<webMaster>: Opcional. Define el correo electrónico del webmaster del feed.
+<category>: Opcional. Define una o más categorías para el feed.
+<cloud>: Opcional. Registra procesos para ser notificado inmediatamente de actualizaciones del feed.
+<ttl>: Opcional. Especifica el número de minutos que el feed puede permanecer en caché antes de actualizarlo desde la fuente.
+<rating>: Opcional. La clasificación PICS del feed.
+<textInput>: Opcional. Especifica un campo de texto que debería mostrarse con el feed.
+<skipHours>: Opcional. Especifica las horas en las que los agregadores deberían omitir la actualización del feed.
+<skipDays>: Opcional. Especifica los días en los que los agregadores deberían omitir la actualización del feed.
+
+
+Com el validem? 
+Amb Feed Validation Service 
+RSS Viewer
+
+Com el publiquem?
+La publicación de feeds o canales RSS es un proceso
+que te permite compartir el contenido de tu sitio web de manera 
+estructurada para que otros puedan suscribirse y recibir actualizaciones automáticamente.
+
+1- crear 2 validar 3 pujar el rss al servidor web 4 añadeixes el icono RSS al teu lloc web 5 actualitzarlo
+

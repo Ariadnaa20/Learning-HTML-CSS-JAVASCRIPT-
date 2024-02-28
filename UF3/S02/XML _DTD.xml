@@ -1,0 +1,27 @@
+<!DOCTYPE JugadorsLliga [
+<!ELEMENT JugadorsLliga (jugador+)> <!--significa q te mes coses dins-->
+<!ELEMENT jugador (dni, name, cognom1, cognom2, adreça, telefon, datanaixement, temporades)> <!--seguent etiqueta i el q te adins-->
+<!--Tipus de elements-->
+<!ELEMENT dni (#PCDATA)>
+<!ATTLIST dni dni CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT cognom1 (#PCDATA)>
+<!ELEMENT cognom2 (#PCDATA)>
+<!ELEMENT adreça (#PCDATA)>
+<!ELEMENT telefon (#PCDATA)>
+<!ELEMENT datanaixement (#PCDATA)>
+
+
+<!ELEMENT temporades (temporada+)> <!--significa q te mes coses dins-->
+<!--Tipus de elements-->
+<!ELEMENT temporada (equip)>
+<!ATTLIST temporada any CDATA #REQUIRED>
+
+<!ELEMENT equip (jornada+)> <!--significa q te mes coses dins-->
+<!ATTLIST equip nom CDATA #REQUIRED>
+<!ATTLIST equip dorsal CDATA #REQUIRED>
+<!ELEMENT jornada EMPTY>
+<!ATTLIST jornada numero CDATA #REQUIRED>
+<!ATTLIST jornada minutsJugats CDATA #REQUIRED>
+<!ATTLIST jornada gols CDATA #REQUIRED>
+]>

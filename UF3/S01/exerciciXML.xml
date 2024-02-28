@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JugadorsLliga>
+     <jugador>
+	     <dni dni="56783627L">Marc</dni>
+		 <name>Marc</name>
+		 <cognom1>Lopez</cognom1>
+		 <cognom2>Rodriguez</cognom2>	
+         <adreça>Carrer 3 Barcelona </adreça>
+         <telefon>34 678 46 25 15</telefon>		 
+		 <datanaixement>1999-05-12</datanaixement>
+		 
+		 <temporades>
+            <temporada any="2021-2022">
+                <equip nom="FC Barcelona" dorsal="10">
+                    <jornada numero="1" minutsJugats="90" gols="1"/>
+                    <jornada numero="2" minutsJugats="85" gols="0"/>
+                </equip>
+            </temporada>
+            <temporada any="2022-2023">
+                <equip nom="FC Barcelona" dorsal="10">
+                    <jornada numero="1" minutsJugats="90" gols="2"/>
+                    <jornada numero="2" minutsJugats="90" gols="1"/>
+                </equip>
+            </temporada>
+        </temporades>
+	 </jugador>
+	 
+	   <jugador>
+	     <id>2</id>
+		 <name>Josep</name>
+		 <cognom1>Hernandex</cognom1>
+		 <cognom2>Lopez</cognom2>	 
+		 <adreça>Carrer 4 Barcelona </adreça>	
+		 <telefon>34 698 18 30 45</telefon>	
+		 <datanaixement>1995-11-20</datanaixement>
+		 
+		 <temporades>
+            <temporada any="2021-2022">
+                <equip nom="Real Madrid" dorsal="7">
+                    <jornada numero="1" minutsJugats="88" gols="0"/>
+                    <jornada numero="2" minutsJugats="90" gols="1"/>
+                </equip>
+            </temporada>
+            <temporada any="2022-2023">
+                <equip nom="Real Madrid" dorsal="7">
+                    <jornada numero="1" minutsJugats="75" gols="0"/>
+                    <jornada numero="2" minutsJugats="90" gols="1"/>
+                </equip>
+            </temporada>
+        </temporades>
+	 </jugador>
+	 
+</JugadorsLliga>

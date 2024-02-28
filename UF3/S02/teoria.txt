@@ -1,0 +1,78 @@
+Apart de complir amb les regles sintactiques s'ha de complir amb La estructura del document XML
+
+ESTRUCTURA XML amb XML DTD
+ESTRUCTURA XML amb Esquema amb XSD
+
+Referenciando un XSD:
+
+<?xml version="1.0"?>
+<note xmlns="https://www.w3schools.com"  estás especificando un espacio de nombres predeterminado para los elementos dentro de ese documento.
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" para definir la estructura y instancia y las restricciones de los contenidos en documentos XML
+xsi:schemaLocation="https://www.w3schools.com/xml/note.xsd"> ubi del esquema xml para validar el documento
+
+
+El element esquema:
+
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"  utilitzat per definir els elements i tipus de dades
+targetNamespace="https://www.w3schools.com" namespace per els elements definits en el XML
+xmlns="https://www.w3schools.com"  namespace por defecto
+elementFormDefault="qualified"> cualquier elemento en el namespace debe ser calificado
+
+
+ELEMENTS XSD o schema
+<xs:element name="xxx" type="yyy"/> nom del element i tipus de dades : xs:string, xs:decimal, xs:integer, xs:boolean, xs:date, xs:time
+
+XSD:
+<xs:element name="lastname" type="xs:string"/>
+<xs:element name="age" type="xs:integer"/>
+<xs:element name="dateborn" type="xs:date"/> 
+Valid XML:
+<lastname>Refsnes</lastname>
+<age>36</age>
+<dateborn>1970-03-27</dateborn>
+
+-posar valor per defecte: <xs:element name="color" type="xs:string" default="red"/>
+-posar un valor fixa : <xs:element name="color" type="xs:string" fixed="red"/>
+
+RESTRICIONS
+- restriccions a numeros
+<xs:element name="age">
+    <xs:simpleType>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+-restriccions a conjunt de valors
+<xs:element name="car">
+          <xs:simpleType>
+             <xs:restriction base="xs:string">
+                  <xs:enumeration value="Audi"/>
+                  <xs:enumeration value="Golf"/>
+                  <xs:enumeration value="BMW"/>
+            </xs:restriction>
+         </xs:simpleType>
+</xs:element>
+
+-restriccions a una serie de valors 
+<xs:element name="letter">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[a-z]"/>
+                </xs:restriction>
+            </xs:simpleType>
+</xs:element>
+
+-restriccions de longitud
+<xs:element name="password">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:length value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+</xs:element>
+
+ELEMENTS COMPLEXOS

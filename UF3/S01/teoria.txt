@@ -1,0 +1,43 @@
+XML: crea mantiene i transforma informacion de la base de datos 
+<!--comentari-->
+
+Estructura: 
+  - tags <hola></hola> 
+        - tag vacio: <hola/>
+  - elements <hola>Bon dia</hola>
+  - aributs <estudiante dni=“33443443J”>Juan</estudiante>
+
+  Tenir en compte:
+  a. Los nombres pueden contener letras, números y otros caracteres.
+  b. Los nombres NO pueden empezar con un número, un carácter de 
+     puntuación o con las letras xml (en mayúsculas o en minúsculas).
+  c. Los nombres no pueden contener espacios.
+  d. Las etiquetas XML son sensibles al uso de mayúsculas y minúsculas: 
+     <Letter> no es lo mismo que <letter>. La apertura y cierre de las 
+     etiquetas debe escribirse de la misma forma.
+
+     errores: <hola que tal>Bon dia</hola que tal>  --error:te espais, no pot começar per xml ni per numero
+
+
+Caracters especials:
+<      >     &       '        "          aquests si per exemple volem utlitzar el < per una altra funcio q no obrir etiqueta ens donaria error i la equivalencia es:
+&lt;   &gt;  &amp;   &apos    &quot;
+
+Instruccions de processament 
+Se utilizan para dar información a las aplicaciones que procesan el documento XML.
+<?xml version=“1.0” encoding=“UTF-8”?>
+
+Secciones especiales en XML
+tot el que vagi dins de CDATA no es procesara per el parser : <![CDATA["contenido"]]>
+<codigo><![CDATA[<html><body><h3>Titulo</h3></body></html>]]></codigo>
+
+Podem escriure els XML en NOTEPAD++
+
+
+RSS: es un formato XML para compartir contenido en la web,
+ permitiendo a los usuarios suscribirse y
+  recibir actualizaciones de sus sitios web favoritos automáticamente​.
+
+
+
+  

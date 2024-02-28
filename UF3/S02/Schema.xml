@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">  <!--elelemt arrel es el namespace per definir els eleemnts i tipus de dades-->
+
+  <xs:element name="JugadorsLliga"> <!--tots segueixen la mateixa estructura xs:element (element q engloba)xs:complexType xs:sequence (aqui venen els atributs. Si no hi hgan atributs es torna arepetir el proces) -->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="jugador" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dni" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="cognom1" type="xs:string" />
+              <xs:element name="cognom2" type="xs:string" />
+              <xs:element name="adreça" type="xs:string" />
+              <xs:element name="telefon" type="xs:string" />
+              <xs:element name="datanaixement" type="xs:date" />
+              <xs:element name="temporades">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="temporada" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="equip">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="jornada" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="numero" type="xs:integer" use="required" />
+                                    <xs:attribute name="minutsJugats" type="xs:integer" use="required" />
+                                    <xs:attribute name="gols" type="xs:integer" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="nom" type="xs:string" use="required" />
+                              <xs:attribute name="dorsal" type="xs:integer" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="any" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <!-- Si el DNI es un atributo, deberíamos mover su definición aquí como un xs:attribute -->
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

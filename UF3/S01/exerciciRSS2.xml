@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Sport News</title>
+  <link>http://www.sport.es</link>
+  <description>Últimas noticias deportivas</description>
+  <language>es</language>
+  <image>
+    <url>http://www.sport.es/logo.png</url>
+    <title>Sport News</title>
+    <link>http://www.sport.es</link>
+  </image>
+
+  <item>
+    <title>El Barça gana la liga</title>
+    <link>http://www.sport.es/barça-gana-liga</link>
+    <description><![CDATA[<img align="left" width="120" height="120" hspace="5" src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg"/>El FC Barcelona se corona campeón tras una impresionante temporada.]]></description>
+    <pubDate>Mon, 27 Feb 2024 14:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Nadal conquista otro Grand Slam</title>
+    <link>http://www.sport.es/nadal-conquista-grand-slam</link>
+    <description><![CDATA[<img align="left" width="120" height="120" hspace="5" src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg"/>Rafael Nadal se hace con otro título de Grand Slam, reafirmando su leyenda en el tenis.]]></description>
+    <pubDate>Mon, 27 Feb 2024 16:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>La selección de baloncesto se prepara para los Juegos Olímpicos</title>
+    <link>http://www.sport.es/seleccion-baloncesto-prepara-juegos-olimpicos</link>
+    <description><![CDATA[<img align="left" width="120" height="120" hspace="5" src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg"/>El equipo nacional de baloncesto inicia su campamento de entrenamiento para los próximos Juegos Olímpicos.]]></description>
+    <pubDate>Mon, 27 Feb 2024 18:00:00 GMT</pubDate>
+  </item>
+
+</channel>
+</rss>
