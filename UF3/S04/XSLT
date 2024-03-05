@@ -1,0 +1,87 @@
+Genera documents de formats XML HTML text PDF .. a partir d'un document XML
+
+utlitzat per documents impresos i en pantalla
+transformacions genericas de documents XML 
+
+Procesador XSLT : Son aplicaciones capaces de procesar documentos XML mediante hojas de
+transformaciones XSLT
+ http://www.shelltools.net/?op=xslt.
+
+ -se definen reglas para filtrar y seleccionar 
+ informacion específica de un documento XML,
+ reorganizar la estructura del documento , agregar o eliminar elementos...
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> 
+
+</xsl:stylesheet>
+
+EXEMPLE CLASSE PROFE
+si tenim XML I XSL(template, la forma en la que s'ha de estructurar) podem crear un XSLT i sorgira una sortida en html(xsl).. pdf (XSL-FO)
+
+
+COM CREARLOS?
+
+<?xml verion="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" version="5.0" encoding="UTF-8"/>
+ <xsl:template match="/">
+ ...
+ </xsl:template>
+</xsl:stylesheet>
+
+
+ELEMENTS 
+
+ELEMENT <xsl:output>
+<xsl:output method=“html” version=“5.0“ encoding=“UTF-8”/>
+
+
+ELEMENT <xsl:template> --indica els elements del arbre que es veuran afectats 
+<xsl:template match="/">
+... cosas a dentro 
+</xsl:template>
+
+ELEMENT <xml:value-of> 
+<td><xsl:value-of select="catalog/cd/title"/></td> 
+
+ELEMENT <xsl:for-each>
+ ejemplo 1 <xsl:for-each select=“pattern”> ejemplo 2 <xsl:for-each select="catalog/cd"> ejemplo 3<xsl:for-each select="catalog/cd[artist=‘Tina Turner']">
+...
+</ xsl:for-each>
+
+ELEMENT <xsl:sort>
+
+<xsl:sort select="expression"
+
+/>
+
+
+ELEMENT <xsl:if>
+<xsl:if test="expression">
+...some output if the expression is true...
+</xsl:if>
+
+
+ELEMENT <xsl:choose>
+<xsl:choose>
+<xsl:when test="expression">
+... some output ...
+</xsl:when>
+<xsl:otherwise>
+... some output ....
+</xsl:otherwise>
+</xsl:choose>
+
+
+REGLAS DE TRANSFORMACIONES
+si la hoja de transformaciones no tiene plantillas, se enviara el contenido textual omitinedo el valor de los atributos.
+
+Si la hoja de transformaciones sólo tiene una plantilla, asociada al nodo raíz del documento XML, pero sin ningún contenido, no se envía nada a la salida.
+
+ Si la hoja de transformaciones no tiene ninguna plantilla asociada al nodo raíz, pero sí otras asociadas a otros elementos, se va recorriendo el árbol del
+documento XML y enviando el contenido textual a la salida y, cuando se encuentra un elemento con una plantilla asociada, se aplican las reglas
+definidas en la plantilla.
+
+ Se aplican las transformaciones que indique la
+ plantilla. Si hubiera una plantilla vacía (sin acciones en su interior, el elemento al que afectará la
+plantilla y sus descendientes no se visualizarían).

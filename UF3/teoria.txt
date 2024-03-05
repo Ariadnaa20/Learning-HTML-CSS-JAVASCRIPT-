@@ -1,0 +1,8 @@
+Tens un document XML que vols transformar.
+Crees un fitxer XSLT que descriu les regles de transformació per convertir el teu document XML en el format desitjat (per exemple, HTML).
+Utilitzes un processador XSLT (que pot ser part d'un software de desenvolupament, un navegador web modern, o una eina de línia de comandes) per aplicar el teu fitxer XSLT al teu document XML. 
+Això genera un nou document en el format de sortida especificat (per exemple, un fitxer HTML que pots obrir en un navegador).
+
+la cosa es crear un xslt (llenguatge xsl) amb la plantilla base i modificarla per convertir el xml a qualsevol format
+
+

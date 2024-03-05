@@ -40,4 +40,5 @@ RSS: es un formato XML para compartir contenido en la web,
 
 
 
+XSLT serveix per pasar un XML a HTML, PDF, TXT. 
   

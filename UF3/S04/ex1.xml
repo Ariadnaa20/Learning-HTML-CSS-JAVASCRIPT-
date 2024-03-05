@@ -1,0 +1,20 @@
+--utilizar un xsl per transformar un xml en un altre format. el proces es diu xslt
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+    <head>
+      <title>Informació de Contacte</title>
+    </head>
+    <body>
+      <h1><xsl:value-of select="company/name"/></h1>
+      <p>Benvinguts a La Salle Gracia</p>
+      <h2>Detalls de contacte:</h2>
+      <p><b>Direcció:</b> <xsl:value-of select="company/address"/></p>
+      <p><b>Telèfon:</b> <xsl:value-of select="company/phone"/></p>
+    </body>
+  </html>
+</xsl:template>
+
+</xsl:stylesheet>

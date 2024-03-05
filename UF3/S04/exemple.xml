@@ -1,0 +1,33 @@
+--CAR
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet type="text/xsl" href="carsStyle.xsl"?> -->
+<?xml-stylesheet type="text/css" href="cars.css"?>
+<collection>
+	<car>
+		<platenumber>4653HYT</platenumber>
+		<brand>Volkswagen</brand>
+		<model>Golf GTI</model>
+		<year>2019</year>
+		<horsepower>135</horsepower>
+		<kms>5.454</kms>
+		<price>22.980€</price>
+	</car>
+	<car>
+		<platenumber>B2501FD</platenumber>
+		<brand>Piaggio</brand>
+		<model>Vespa Primavera 75PK</model>
+		<year>1981</year>
+		<horsepower>6</horsepower>
+		<kms>42.345</kms>
+		<price>3.500€</price>
+	</car>
+		<car>
+		<platenumber>4432FCB</platenumber>
+		<brand>BMW</brand>
+		<model>Serie 1</model>
+		<year>2008</year>
+		<horsepower>160</horsepower>
+		<kms>153.998</kms>
+		<price>8.450€</price>
+	</car>
+</collection>	
