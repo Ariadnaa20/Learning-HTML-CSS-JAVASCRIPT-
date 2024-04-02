@@ -1,0 +1,94 @@
+XPATH buscar informacio en els fitxers XML llenguatge de consulta
+
+XPATH navegar en l'estructura de un fitxer XML 
+
+XQUERY consultes en documents XML a mes conté Xpath
+
+
+1.XPATH
+
+XPATH:
+• Nodos: raíz, element, atributo, texto Ejes: /, //, @atributo 
+• Nodos comprobación: node(), text(),@atributo 
+• Predicado: [@atributo], [número] 
+Operadores: 
+• lógicos: and, or, not()
+• union: | (OR)
+• aritméticos: +, -, *, div, mod
+• comparación: =, !=, <, >, <=, >= 
+Funciones:
+• last() para que devuelva el último ítem del documento, [y] para que devuelva el elemento y del 
+documento
+• sum(x), avg(x), max(x), min(x). Siendo x = expresión xpath que devuelva un valor numérico
+• starts-with(element, patron_de_inicio), contains(elemento, patron_de_busqueda)
+• concat(expresionString, variable, expresionString,....
+
+
+
+
+retorna o booleà un numero una cadena de caractes o grup d'elements
+Aixo comença amb el simbol / com si fos un arbre
+
+Rutas: 
+  - absolutas empiezan por / es decir desde la raiz del arbol nodos padre
+
+  /html/body/div/div/div/p
+
+  /clase/professor/nom
+
+  /classe/alumnes/alumne/nom
+
+  - relativas repecto a un nodo determinado nodo hijo
+  //
+
+
+  NODOS:
+  Raiz /
+  Elemento
+  Atributo @
+  Texto text()
+
+
+ 
+
+
+La sintaxis se divide en 3 partes
+ eje: indica el nodo o los nodos en los que se realiza la búsqueda
+ nodo de comprobación: especifica el nodo o los nodos seleccionados dentro del eje
+ predicado: permite restringir los nodos de comprobación
+
+ 
+  EJES
+   / busqueda en la raizx o /.
+  // busquesda en cualquier nivel //h1
+  @atributo
+  . selecciona l'element actual
+  .. selecciona l'element pare
+  | permet escollir recorreguits 
+
+
+  NODOS DE COMPROVACIÓ 
+  node() selecciona tots els nodos ja siguin elements o tetx
+  text() selecciona el contngut del element text
+  * selecciona tots els elements
+  @* selecciona tots els atributs
+
+
+  PREDICADO focalizar busqueda
+    -atriburts id class
+  //h1[@id='titulo'] //h1[@id!='titulo'] puedo utiliozar > < > >= and or 
+
+  operadors: 
+  
+
+
+
+
+
+
+
+
+
+
+COMENÇEM 
+/bookstore/book[2]/author     

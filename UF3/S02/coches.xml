@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="coches.xsd" type="application/xml" schematypens="http://ww2.w3.org/2001/XMLSchema"?>
+<coches>
+    <coche matricula="1111AAA">
+        <marca>Golf</marca>
+        <modelo>Leon</modelo>
+        <puertas>5</puertas>
+        <color>Rojo</color>
+        <precio venta="nuevo">20000</precio>
+    </coche>
+    <coche matricula="2222BBB">
+        <marca>BMW</marca>
+        <modelo>Creed</modelo>
+        <puertas>3</puertas>
+        <color>Negro</color>
+        <precio ventas="ocasion">18000</precio>
+    </coche>
+</coches>

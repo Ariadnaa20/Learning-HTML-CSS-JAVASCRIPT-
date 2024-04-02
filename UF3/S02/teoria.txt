@@ -1,6 +1,47 @@
 Apart de complir amb les regles sintactiques s'ha de complir amb La estructura del document XML
 
-ESTRUCTURA XML amb XML DTD
+DTD especifica quins elements i atributs estan permesos en el document i quines combinacions
+Poden esta rinclosos en el xml o redferenciados en un archiu extern 
+Limitació: noi poden definir tipus de dades pels elements i atributs 
+Validacio simple
+
+<?xml version="1.0"?>
+<!DOCTYPE note [
+       <!ELEMENT note (to,from,heading,body)>
+       <!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend</body>
+</note>
+
+
+XSD defineix la estriuctura contngut i semantica dels doc XML 
+es mes poderos i flexible que el DTD 
+Validacio complexa
+
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="note">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="to" type="xs:string"/>
+<xs:element name="from" type="xs:string"/>
+<xs:element name="heading" type="xs:string"/>
+<xs:element name="body" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+
+
+
+
 ESTRUCTURA XML amb Esquema amb XSD
 
 Referenciando un XSD:

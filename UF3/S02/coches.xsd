@@ -1,0 +1,138 @@
+--dos tipus d'eements: els compostos(tenen elements dins) i simples
+marc venteo
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs=http://www.w3.org/2001/XMLSchema
+targetNamespace=https://www.w3schools.com xmlns=https://www.w3schools.com
+elementFormDefault="qualified">
+   <xs:element name = "coches"> --elemento raiz
+     <xs:complexType> --elemento complejo (coches)pq tiene elementos simples dentro
+         <xs:sequence> --los elementos simples aparecen en sequencia dentro de coches
+            <xs:element name="coche" maxOccurs="unbounded"> --el elemento complejo
+               <xs:complexType>  -- elemento complejo (coche)
+                  <xs:sequence>  -- los elementos de dentro de coche son en sequencia
+                    <xs:element name= "marca" ></xs:element> --potser xs:string, xs:decimal, xs:integer, xs:boolean, xs:date 1970-05-30, xs:time
+                      <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                          <xs:enumeration value="Audi"/>
+                          <xs:enumeration value="Golf"/>
+                          <xs:enumeration value="BMW"/>
+                          </xs:restriction>
+                          </xs:simpleType>
+                    </xs:element>
+                    <xs:element name= "modelo" type="xs:string"></xs:element>
+                    <xs:element name= "puertas"> --si tiene restriccion es simple type
+                      <xs:simpleType>
+                         <xs:restriction base="xs:integer">
+                             <xs:minInclusive value="2"></xs:minInclusive>
+                             <xs:maxInclusive value="5"></xs:maxInclusive>
+                         </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name= "color" type="xs:string" default="red"></xs:element> --Valor por defecto para el elemento ”color” es “red” o fixed="red" Se asigna el valor “red” para el elemento “color” y no se podrá cambiar
+                    <xs:element name= "precio" type="xs:integer">
+                      <xs:complexType>  --si tiene atributo es complextype
+                         <xs:simpleContent>
+                            <xs:extension base="xs:integer">
+                                <xs:attribute name = "venta" type="xs:string"></xs:attribute>
+                            </xs:extension>
+                         </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            <xs:attribute name = "matricula"> -- van els atributs del element pare COCHE normalment porta type pero si te restriccions no cal posarli ja q ja li poses abaix
+               <xs:simpleType>
+                   <xs:restriccion base="xs:string">
+                     <xs:pattern value="[0-9]{4}[A-Z]{3}"></xs:pattern>
+                     <xs:length value="8"/>
+                   </xs:restriccion>
+               </xs:simpleType>
+            </xs:attribute> 
+        </xs:element>
+         </xs:sequence>
+     </xs:complexType>
+   </xs:element>
+</xs:schema>
+
+
+
+--hi han dues maneres de declarar un element complex com sempre
+
+<xs:element name="employee">
+   <xs:complexType>
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string"/>
+        <xs:element name="lastname" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:element>
+
+
+<xs:element name="employee" type="personinfo"/>
+    
+     <xs:complexType name="personinfo">
+       <xs:sequence>
+           <xs:element name="firstname" type="xs:string"/>
+           <xs:element name="lastname" type="xs:string"/>
+      </xs:sequence>
+</xs:complexType>
+
+
+
+--ELEMENT amb contingut mix
+
+<letter>
+     Dear Mr.<name>John Smith</name>.
+     Your order <orderid>1032</orderid>
+     will be shipped on <shipdate>2001-07-13</shipdate>.
+</letter>
+
+<xs:element name="letter">
+     <xs:complexType mixed="true">
+         <xs:sequence>
+             <xs:element name="name" type="xs:string"/>
+             <xs:element name="orderid" type="xs:positiveInteger"/>
+             <xs:element name="shipdate" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+
+
+
+PART 3
+
+INDICADORS D'ORDRE
+
+ALL elementos hijos en qulquier orden
+<xs:element name="person">
+       <xs:complexType>
+           <xs:all>
+               <xs:element name="firstname" type="xs:string"/>
+               <xs:element name="lastname" type="xs:string"/>
+           </xs:all>
+      </xs:complexType>
+</xs:element>
+
+
+CHOICE Solo uno de los elementos hijos puede aparecer
+<xs:element name="person">
+        <xs:complexType>
+              <xs:choice>
+                   <xs:element name="employee" type="employee"/>
+                   <xs:element name="member" type="member"/>
+              </xs:choice>
+        </xs:complexType>
+</xs:element>
+
+
+SEQUENCIA --va en sequencia 
+
+
+--teniim 
+<xs:element name="child_name" type="xs:string" maxOccurs=
+"10"/>
+
+<xs:element name="child_name" type="xs:string"maxOccurs="10" minOccurs=“0”/>
+

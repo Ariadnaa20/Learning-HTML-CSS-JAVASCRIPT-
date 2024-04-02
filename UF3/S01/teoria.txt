@@ -1,7 +1,12 @@
 XML: crea mantiene i transforma informacion de la base de datos 
 <!--comentari-->
 
-Estructura: 
+Estructura: son etiquetes que engloben info q volem processar
+Primer sempre hi haurà una linea al inici per indicar que estem en un fitxer xml 
+                               <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+ al final les etiquetes son anidadas i les etiquetes iguals com molts usuarios sempre s'han de diferenciar amb una pk 
+
   - tags <hola></hola> 
         - tag vacio: <hola/>
   - elements <hola>Bon dia</hola>
@@ -23,13 +28,20 @@ Caracters especials:
 <      >     &       '        "          aquests si per exemple volem utlitzar el < per una altra funcio q no obrir etiqueta ens donaria error i la equivalencia es:
 &lt;   &gt;  &amp;   &apos    &quot;
 
+
 Instruccions de processament 
 Se utilizan para dar información a las aplicaciones que procesan el documento XML.
 <?xml version=“1.0” encoding=“UTF-8”?>
 
-Secciones especiales en XML
-tot el que vagi dins de CDATA no es procesara per el parser : <![CDATA["contenido"]]>
+Els comentaris van amb:
+<!--Comentario -->
+
+Secciones especiales en XML IMPORTANT 
+tot el que vagi dins de CDATA no es procesara per el parser per exem`ple jo puc posar > < &  :
+ La sintaxis es aquesta : <![CDATA["contenido"]]>
+
 <codigo><![CDATA[<html><body><h3>Titulo</h3></body></html>]]></codigo>
+
 
 Podem escriure els XML en NOTEPAD++
 
@@ -42,3 +54,82 @@ RSS: es un formato XML para compartir contenido en la web,
 
 XSLT serveix per pasar un XML a HTML, PDF, TXT. 
   
+MI PRIMER XML aixo al notepad
+
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+   <persona>
+        <id>1</id>
+        <nom>Ariadna</nom>
+        <telefon>784 36 27 37</telefon>
+   </persona>
+   <persona>
+         <id>2</id>
+         <nom>Anaïs</nom>
+         <telefon>345 12 86 09</telefon>
+   </persona>
+</book>
+
+
+
+
+RSS al final es un archiu XML i es pot validar 
+<rss version=“2.0”>
+     <channel>
+           ... Contenido ... 
+     </channel>
+</rss>
+
+Els elements per descriure el canal son: 
+<title>: es el nombre del canal, la forma con la que se conoce el servicio
+<description>: descripción corta del contenido del canal
+<link>: enlace a la dirección donde esta el contenido HTML que se quiere mostrar
+con el canal o feed
+<language></language>
+
+<rss version="2.0">
+       <channel>
+            <title>W3Schools Home Page</title>
+             <link>http://www.w3schools.com</link> LA WEB A Q LE ACCOCIAMOS EL RSS
+            <description>Free web building tutorials</description>
+            <item> --elementyo variable 
+               <title>RSS Tutorial</title>
+               <link>http://www.pais.com/rss</link>  La noticia 
+               <description>New RSS tutorial on W3Schools</description>
+               <guid></guid> --especificar el id de la noticia
+               <category>News</category>
+               <category>Tutorial</category>
+               <pubDate>Fri, 28 Apr 2010</pubDate>
+            </item>
+      </channel>
+</rss>
+
+
+L'etiqueta PUB DATE ha de seguiir aquest ordre 
+Dia de la semana, Dia Mes Año Hora:Minuto:Segundos Zona horaria
+  "Mon"         , 3   Jan 2024 16 : 00 :00           GMT
+
+
+
+PASSOS PER LA PUBLICACIÓ
+1. Crear el fichero xml utilizando la tecnología RSS/Atom, con los items que
+queramos que puedan ser accesibles desde otras websites.
+
+2. Validar el fichero (feedvalidator.org, validator.w3.org/feed, …) W3C
+
+3. Subir el fichero RSS validado al directorio web del servidor web donde este
+alojada nuestra website . IMPORTANTE: el enclace del rss va en un boton en el html <a href = "direcciomn.xml"> Mi canal de rss</a>
+
+4. Añadir al directorio web la imagen del icono RSS
+
+5. Añadir al código de nuestra website el enlace que referencie al fichero RSS y
+muestre el icono RSS
+
+6. Opcional. Para aumentar la popularidad del canal RSS ……submit el fichero
+RSS a los RSS Feed Directories
+
+7. Opcional.Para aumentar la popularidad del canal RSS……registrar el fichero
+RSS en los RSS search engines
+
+8. Actualizar el feed. Si hemos registrado el RSS feed …deberemos tenerlo
+actualizado de forma periódica y debe estar siempre disponible.

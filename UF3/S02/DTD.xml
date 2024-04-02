@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coches [
+     <!ELEMENT coches (coche+)>  --podrian ser (coches,personas)
+     <!ELEMENT coche (marca, modelo, puertas, color, precio)>
+     <!ATTLIST coche matricula CDATA #REQUIRED>
+     <!ELEMENT marca (#PCDATA)>
+     <!ELEMENT modelo (#PCDATA)>
+     <!ELEMENT puertas (#PCDATA)>
+     <!ELEMENT color (#PCDATA)>
+     <!ELEMENT precio (#PCDATA)>
+     <!ATTLIST precio venta CDATA #REQUIRED>
+]>
+
+    <coches>
+        <coche matricula="26389238KFC">
+             <marca>Seat</marca>
+             <modelo>Leon</modelo>
+             <puertas>5</puertas>
+             <color>Rojo</color>
+             <precio venta="nuevo">20000</precio>
+        </coche>
+        <coche matricula="26389238KJPG">
+             <marca>Kia</marca>
+             <modelo>Creed</modelo>
+             <puertas>3</puertas>
+             <color>Negro</color>
+             <precio ventas="ocasion">18000</precio>
+        </coche>
+    </coches>
