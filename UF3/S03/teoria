@@ -78,12 +78,43 @@ La sintaxis se divide en 3 partes
     -atriburts id class
   //h1[@id='titulo'] //h1[@id!='titulo'] puedo utiliozar > < > >= and or 
 
-  operadors: 
-  
+  Puedo conatenar:
+  //div[@class="container container-uno"]/li[1]   ..   puc concatenar 
+
+  en el 1 puc posar last() position() 
+
+
+    - [@atributo] selecciona los elementos que tienen el atributo 
+    - [numero] si hi han RESULTATS els selecciona per ordre pot ser 
+                          - last() selecciona l'últim
+                          - position()=n  selecciona el que ocupa la posició n
+    - [condició] selecciona els nodos que cumpleixen la condició es pot utilitzar @ , | , and , or, not(), +, -, *, div, mod, =, !=, <> <= >=
+    Si les comparacions inclueix un text ha d'anar amb comillas simples o dobles
+
+    Es poden utiitzar funcions dins d'aixó [] hi han diferents tipus:
+      
+      Funcions para manipular conjuntos de nodos: obtenir el nom del nodo, contarlos, treballar amb funcions
+
+      Funciones para trabajar con cadenas de caracteres: que permiten extraer caracteres, concatenar, comparar…cadenas de caracteres.
+
+      Funciones para hacer operaciones matemáticas: se pueden convertir los resultados a valores numéricos, contar nodos, hacer operaciones, etc
+
+      Funciones boleanas: permiten hacer operaciones boleanas con los nodos
+
+      Funciones para fechas: permiten hacer operaciones diversas con fechas y horas
+
+      ej : 
+      //libro/titulo[contains(.,'vida')]
+      //libro/fechaPublicacion[starts-with(@año,'196')]/..
+
+      pots concatenar dues
+      //libro[autor='Mario Vargas Llosa'][fechaPublicacion/@año="1969"]
+      
+      //libro[autor='Mario Vargas Llosa' and not(fechaPublicacion/@año="1969")]
 
 
 
-
+    
 
 
 
