@@ -16,3 +16,97 @@
         <precio ventas="ocasion">18000</precio>
     </coche>
 </coches>
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8">
+
+<xs:schema xmlns:xs=" ">
+    <xs:element name="coches">  //cada vez q creramos un elementp pensar es simple o comeljo 
+        <xs:complexType>  //como lo de dento esta iordenado?
+            <xs:sequence> 
+                <xs:element name="coche" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="marca" type="xs:string"></xs:element>
+                           <xs:element name="modelo" type="xs:string"></xs:element>
+                           <xs:element name="puertas" type="xs:positiveInteger">
+                               <xs:simpleType>
+                                    <xs:restriction base="xs:positiveInteger">
+                                        <xs:minInclusive value="2"/>
+                                        <xs:maxInclusive value="5"/>
+                                    </xs:restriction>
+                               </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="color" type="xs:string"></xs:element>
+                           <xs:element name="precio" type="xs:integer">  --EJEMPLO DE ATRIBUTO
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:integer">
+                                            <xs:attribute name="venta" type="xs:integer"></xs:attribute>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="matricula" type="xs:string"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+
+--Si hay q poner valor por defecrto se pone default=" " seguido de type
+--Si hay q poner valor FIXED se pone fixed=" " seguido de type
+
+
+--SI HAY RESTRICCIONES 
+
+<xs:simpleType>
+    <xs:restriction base"xs:integer">
+        <xs:minInclusive value="2"/>
+        <xs:maxInclusive value="5"/>
+
+        <xs:enumeration value="Audi"/>
+        <xs:enumeration value="Golf"/>
+        <xs:enumeration value="BMW"/>
+
+        <xs:pattern value="[a-z]"/>
+
+
+        <xs:length value="8"/>
+    
+    
+    </xs:restriction>
+</xs:simpleType>
+
+
+
+maxOccurs="unbounded"
+minOccurs="unbounded" o 0 o 1
+
+
+
+--ELEMENT mix
+
+<letter>
+Dear Mr.<name>John Smith</name>.
+Your order <orderid>1032</orderid>
+will be shipped on <shipdate>2001-07-13</shipdate>.
+</letter>
+
+
+<xs:element name="letter">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="orderid" type="xs:positiveInteger"/>
+            <xs:element name="shipdate" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>

@@ -15,7 +15,10 @@
      <!ELEMENT foto (#CDATA)>
 ]>
 
-<colegio>
+<colegio 
+xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com/xml/DTD.xsd">
 <alumnos>
    <alumno expediente="AA01">
       <nombre>Marc</nombre>

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE coches [
-     <!ELEMENT coches (coche+)>  --podrian ser (coches,personas)
-     <!ELEMENT coche (marca, modelo, puertas, color, precio)>
-     <!ATTLIST coche matricula CDATA #REQUIRED>
-     <!ELEMENT marca (#PCDATA)>
-     <!ELEMENT modelo (#PCDATA)>
-     <!ELEMENT puertas (#PCDATA)>
-     <!ELEMENT color (#PCDATA)>
-     <!ELEMENT precio (#PCDATA)>
-     <!ATTLIST precio venta CDATA #REQUIRED>
-]>
+<!DOCTYPE coches [ 
+    <!ELEMENT coches (coche+)> //  elemento raiz
+    <!ELEMENT coche (marca,modelo,puertas,color,precio)> //elemento padre 
+    <!ATTLIST coche matricula CDATA #REQUIRED>  //atributo
+    <!ELEMENT marca (#PCDATA)> //hijos
+    <!ELEMENT modelo (#PCDATA)> //si un hijo tiene un atributo se declara el hijo i despues el atributo 
 
+
+
+]>
     <coches>
         <coche matricula="26389238KFC">
              <marca>Seat</marca>
@@ -27,3 +25,17 @@
              <precio ventas="ocasion">18000</precio>
         </coche>
     </coches>
+
+
+
+
+<!DOCTYPE colegio [
+    <!ELEMENT colegio (alumnos,profes)>
+    <!ELEMENT alumnos (alumno+)>
+    <!ELEMENT alumno (nombre,apellido,matricula,activo)>
+    <!ATTLIST alumno expediente CDATA #REQUIRED>
+    <!ELEMENT nombre (#PCDATA)>
+
+
+
+]>

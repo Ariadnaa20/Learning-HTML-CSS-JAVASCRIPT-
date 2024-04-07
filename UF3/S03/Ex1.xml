@@ -33,14 +33,14 @@
 
 
 1-//book/title/text()
-2-//(book[1]/title)[1]
+2-/bookstore/book[1]/price
 3-//book/price/text()
-4-//book[price>35]/title/text()
+4-/bookstore/book[price>35]/title/text()
 5-//book[@category='CHILDREN']
 6-//book[year=2005 and price=30]
-7-//book[year=//book[title='Everyday Italian']/year/text()]
-8-//book[@category=//book[title='XQuery Kick Start']/@category]/title/text()
+7-/bookstore/book[year=//book[title="Everyday Italian"]/year]
+8-//book[@category = //book[title = 'XQuery Kick Start']/@category]/title/text()
 9-//book[title='XQuery Kick Start']/author[starts-with(., 'K')]
-10-//book[contains(title, 'XM')]/title/text()
+10-/bookstore/book/title[contains (., 'XM')]/text()
 
 

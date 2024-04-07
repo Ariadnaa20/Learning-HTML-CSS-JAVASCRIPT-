@@ -1,9 +1,10 @@
 --Exercici 2 
 
 1 //cicle/@id
-2//cicle[@grau="Mig"]/@id
-3//alumne[@aprovat="NO"]/nom
+2//cicle[@grau="Mig"]/@id  o //cicle[@grau="Mig"]/text()
+3//alumne[@aprovat="NO"]/nom  o //nom/..[@aprovat="NO"]/nom
 4count(//classe[@nom="ASIX"]/alumne[genere="Dona"])
 5//alumne[@aprovat="NO" and contains(email, 'hotmail')]/nom
-6//alumne[nota=10]/ancestor::classe/@nom
+6///alumne[nota=10]/../@nom
 7count(//classe[@nom="ASIX"]/alumne[@aprovat="SI"])
+8 count(//alumne[@aprovat="SI"]) div sum(//alumne) ESTA MAL

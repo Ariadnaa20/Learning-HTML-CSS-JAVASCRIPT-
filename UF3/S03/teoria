@@ -1,3 +1,5 @@
+https://www.mclibre.org/consultar/xml/lecciones/xml-xpath.html
+
 XPATH buscar informacio en els fitxers XML llenguatge de consulta
 
 XPATH navegar en l'estructura de un fitxer XML 
@@ -44,8 +46,9 @@ Rutas:
 
   NODOS:
   Raiz /
-  Elemento
-  Atributo @
+  Elemento <autor>Juan</autor>
+  Atributo @ son etiquetas añadidas al nodo 
+  <autor id=1>Juan</autor>
   Texto text()
 
 
@@ -109,7 +112,7 @@ La sintaxis se divide en 3 partes
 
       pots concatenar dues
       //libro[autor='Mario Vargas Llosa'][fechaPublicacion/@año="1969"]
-      
+
       //libro[autor='Mario Vargas Llosa' and not(fechaPublicacion/@año="1969")]
 
 

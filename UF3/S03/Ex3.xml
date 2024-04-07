@@ -1,0 +1,5 @@
+1--/temps/poblacio[nom="Girona"]/data[@dia="23-05-2018"]/previsio[@hora="14:00"]/graus
+2-- /temps/poblacio/nom="Salt"/data[@dia="22-05-2018"]/previsio/estat
+3 /temps/poblacio/nom="Olot"/data/previsio/estat[contains (., 'pluja')]/../data
+4 /temps/poblacio/data/previsio[@hora="08:00" and graus=24]/../../nom
+5 NI IDEA
